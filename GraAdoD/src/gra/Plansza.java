@@ -1,16 +1,20 @@
 package gra;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+//import OknoGry.PoleAction;
+
 public class Plansza extends JPanel {
 	public static final int WYMIAR_X = 6;
 	public static final int WYMIAR_Y = 6;
 
-	private Pole[][] kratki;
+	public Pole[][] kratki;
 
 	public Plansza()  {
 		setLayout(new GridLayout(Plansza.WYMIAR_Y, Plansza.WYMIAR_X));
@@ -33,5 +37,7 @@ public class Plansza extends JPanel {
 	public Pole[][] getPole() {
 		return kratki;
 	}
-
 }
+
+
+

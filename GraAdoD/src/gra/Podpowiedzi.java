@@ -3,10 +3,13 @@ package gra;
 import java.awt.*;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.io.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.Icon;
 
-public class Podpowiedzi extends JPanel {
+public class Podpowiedzi extends JPanel{
 
 	public static final int WYMIAR_Xpod = 8;
 	public static final int WYMIAR_Ypod = 1;
@@ -31,7 +34,11 @@ public class Podpowiedzi extends JPanel {
 				add(podP);
 			}
 			
-			pod[0][0].setText("");
+			try {
+				pod[0][0].setIcon( new ImageIcon(ImageIO.read( new File("grafika/podpuste.png"))));
+			} catch (IOException e) {
+				pod[0][0].setText("");
+			}
 			pod[1][0].setText("");
 			pod[2][0].setText("A");
 			pod[3][0].setText("");
